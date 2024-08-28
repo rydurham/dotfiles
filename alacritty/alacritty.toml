@@ -1,0 +1,68 @@
+[bell]
+animation = "EaseOutExpo"
+color = "0xffffff"
+duration = 1
+
+[colors.bright]
+black = "#575656"
+blue = "#82aaff"
+cyan = "#7fdbca"
+green = "#22da6e"
+magenta = "#c792ea"
+red = "#ef5350"
+white = "#ffffff"
+yellow = "#ffeb95"
+
+[colors.cursor]
+cursor = "#d6deeb"
+text = "#011627"
+
+[colors.normal]
+black = "#011627"
+blue = "#82aaff"
+cyan = "#21c7a8"
+green = "#22da6e"
+magenta = "#c792ea"
+red = "#ef5350"
+white = "#ffffff"
+yellow = "#c5e478"
+
+[colors.primary]
+background = "#011627"
+foreground = "#d6deeb"
+
+[colors.selection]
+background = "#1b90dd"
+
+[env]
+TERM = "alacritty"
+
+[font]
+size = 17.0
+
+[font.bold]
+family = "Dank Mono"
+
+[font.italic]
+family = "Dank Mono"
+
+[font.normal]
+family = "Dank Mono"
+
+[font.offset]
+x = 0
+y = 5
+
+
+[window]
+dynamic_title = true
+opacity = 1.0
+title = "Terminal"
+
+[window.dimensions]
+columns = 120
+lines = 40
+
+[window.padding]
+x = 5
+y = 0

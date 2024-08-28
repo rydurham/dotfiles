@@ -1,0 +1,33 @@
+A few things that can't be automated:
+
+/home partition
+https://help.ubuntu.com/community/Partitioning/Home/Moving
+
+Install VS Code
+https://code.visualstudio.com/docs/setup/linux
+https://code.visualstudio.com/docs/setup/linux#_visual-studio-code-is-unable-to-watch-for-file-changes-in-this-large-workspace-error-enospc
+
+Remove 'ctl+shift+e' keybinding conflict
+https://github.com/Microsoft/vscode/issues/48480#issuecomment-414464079
+
+1. go to terminal type 'ibus-setup'
+2. go to Emoji tab, press the '...' next to Emoji choice to get 'select keyboard shortcut for switching' window
+3. use the delete button to delete the shortcut and leave nothing there, press OK
+4. Close
+
+Install AWS CLI
+https://docs.aws.amazon.com/cli/latest/userguide/install-bundle.html
+
+Install Docker
+https://docs.docker.com/install/linux/docker-ce/ubuntu/
+https://docs.docker.com/install/linux/linux-postinstall/
+https://docs.docker.com/compose/install/
+
+Install NordVPN
+https://support.nordvpn.com/Connectivity/Linux/1325531132/Installing-and-using-NordVPN-on-Debian-Ubuntu-and-Linux-Mint.htm
+
+Install Keybase
+https://keybase.io/docs/the_app/install_linux
+
+Install Firefox from PPA
+https://ubuntuhandbook.org/index.php/2022/04/install-firefox-deb-ubuntu-22-04/

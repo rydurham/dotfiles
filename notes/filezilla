@@ -1,0 +1,2 @@
+# Sync sitemanager.xml file
+ln -s /home/ryan/Sync/Filezilla/sitemanager.xml /home/ryan/.config/filezilla/sitemanager.xml

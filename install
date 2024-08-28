@@ -1,0 +1,37 @@
+#!/bin/bash
+
+
+# Inspired by:
+# https://laracasts.com/series/neovim-as-a-php-ide
+
+# Capture our current working directory
+DOTFILES=$(cd $(dirname "${BASH_SOURCE[0]}") && pwd)
+
+# Bash Profile
+echo "Created symbolic link to .bash_profile"
+rm $HOME/.bash_profile
+ln -s $DOTFILES/.bash_profile $HOME/.bash_profile
+
+# Bash RC
+echo "Created symbolic link to .bashrc"
+rm $HOME/.bashrc
+ln -s $DOTFILES/.bashrc $HOME/.bashrc
+
+# Alacritty config
+echo "Created symbolic link to alacritty config"
+rm -rf $HOME/.config/alacritty
+ln -s $DOTFILES/alacritty $HOME/.config/alacritty
+
+# Tmux
+echo "Created symbolic link to tmux config"
+rm -rf $HOME/.tmux.conf
+ln -s $DOTFILES/tmux/tmux.conf $HOME/.tmux.conf
+
+# NeoVim
+echo "Created symbolid link to nvim config"
+rm -rf $HOME/.config/nvim
+ln -s $DOTFILES/nvim $HOME/.config/nvim
+# ln -s /home/ryan/Workbench/laracasts-neovim-lazy/nvim $HOME/.config/nvim
+
+# Add profile and bashrc updates to the current terminal session
+source ~/.bashrc

@@ -1,0 +1,20 @@
+Colors:
+
+# https://github.com/haishanh/night-owl.vim/blob/master/colors/night-owl.vim
+terminal_color_foreground = "#d6deeb"
+terminal_color_background = "#011627"
+terminal_color_0 = "#011627"
+terminal_color_8 = "#637777"
+terminal_color_1 = "#ff5874"
+terminal_color_2 = "#addb67"
+terminal_color_10 = "#addb67"
+terminal_color_3 = "#f78c6c"
+terminal_color_11 = "#f78c6c"
+terminal_color_4 = "#82aaff"
+terminal_color_12 = "#82aaff"
+terminal_color_5 = "#c792ea"
+terminal_color_13 = "#c792ea"
+terminal_color_6 = "#7fdbca"
+terminal_color_14 = "#7fdbca"
+terminal_color_7 = "#aaaaaa"
+terminal_color_15 = "#eeeeee"
