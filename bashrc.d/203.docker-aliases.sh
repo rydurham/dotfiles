@@ -3,12 +3,8 @@ alias dce='docker compose exec'
 alias dcr='docker compose run --rm'
 alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail'
 
-node14() {
-    docker run -it --rm -v $(pwd):/src node:fermium-alpine /bin/sh -c "cd /src; ${*:-sh}"
-}
-
-node16() {
-    docker run -it --rm -v $(pwd):/src node:16-alpine /bin/sh -c "cd /src; ${*:-sh}"
+node20() {
+    docker run -it --rm -u 1000 -v $(pwd):/src node:20-alpine /bin/sh -c "cd /src; ${*:-sh}"
 }
 
 php7.4() {
