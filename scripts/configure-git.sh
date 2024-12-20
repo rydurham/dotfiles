@@ -10,5 +10,6 @@ git config --global init.defaultBranch main
 
 # signing commits in vscode:
 # https://devmount.medium.com/signed-git-commits-in-vs-code-476fb74b8773
+# https://docs.github.com/en/authentication/managing-commit-signature-verification/generating-a-new-gpg-key
 # git config --global user.signingkey [SIGNATURE]
 # git config --global commit.gpgsign true
