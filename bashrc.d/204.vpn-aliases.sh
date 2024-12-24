@@ -16,4 +16,8 @@ gatsby() {
     then
         openvpn3 sessions-list
     fi
+    if [ "$1" == "help" ]
+    then
+        echo "config / start / stop /status"
+    fi
 }
