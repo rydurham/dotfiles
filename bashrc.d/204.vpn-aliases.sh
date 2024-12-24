@@ -18,6 +18,6 @@ gatsby() {
     fi
     if [ "$1" == "help" ]
     then
-        echo "config / start / stop /status"
+        echo "config / start / stop / status"
     fi
 }
