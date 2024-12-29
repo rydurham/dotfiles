@@ -7,26 +7,6 @@ node20() {
     docker run -it --rm -u 1000 -v $(pwd):/src node:20-alpine /bin/sh -c "cd /src; ${*:-sh}"
 }
 
-php7.4() {
-    docker run -it --rm \
-        -u 1000 \
-        -e COMPOSER_HOME=/home/ubuntu/.config/composer \
-        -v $(pwd):/var/www \
-        -w /var/www \
-        -p 8000:8000 \
-        stagerightlabs/php-test-runner:7.4 /bin/bash -c "${*:-bash}"
-}
-
-php8.0() {
-    docker run -it --rm \
-        -u 1000 \
-        -e COMPOSER_HOME=/home/www-data/.config/composer \
-        -v $(pwd):/var/www \
-        -w /var/www \
-        -p 8000:8000 \
-        stagerightlabs/php-test-runner:8.0 /bin/sh -c "${*:-sh}"
-}
-
 php8.1() {
     docker run -it --rm \
         -u 1000 \
@@ -55,6 +35,16 @@ php8.3() {
         -w /var/www \
         -p 8000:8000 \
         stagerightlabs/php-test-runner:8.3 /bin/sh -c "${*:-sh}"
+}
+
+php8.4() {
+    docker run -it --rm \
+        -u 1000 \
+        -e COMPOSER_HOME=/home/www-data/.config/composer \
+        -v $(pwd):/var/www \
+        -w /var/www \
+        -p 8000:8000 \
+        stagerightlabs/php-test-runner:8.4 /bin/sh -c "${*:-sh}"
 }
 
 
