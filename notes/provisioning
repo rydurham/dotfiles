@@ -18,16 +18,8 @@ https://github.com/Microsoft/vscode/issues/48480#issuecomment-414464079
 Install AWS CLI
 https://docs.aws.amazon.com/cli/latest/userguide/install-bundle.html
 
-Install Docker
-https://docs.docker.com/install/linux/docker-ce/ubuntu/
-https://docs.docker.com/install/linux/linux-postinstall/
-https://docs.docker.com/compose/install/
-
-Install NordVPN
-https://support.nordvpn.com/Connectivity/Linux/1325531132/Installing-and-using-NordVPN-on-Debian-Ubuntu-and-Linux-Mint.htm
-
-Install Keybase
-https://keybase.io/docs/the_app/install_linux
-
 Install Firefox from PPA
 https://ubuntuhandbook.org/index.php/2022/04/install-firefox-deb-ubuntu-22-04/
+
+Fixing "Key is stored in legacy trusted.gpg keyring" Issue in Ubuntu]
+https://itsfoss.com/key-is-stored-in-legacy-trusted-gpg/
