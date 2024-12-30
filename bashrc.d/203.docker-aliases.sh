@@ -13,7 +13,6 @@ php8.1() {
         -e COMPOSER_HOME=/home/www-data/.config/composer \
         -v $(pwd):/var/www \
         -w /var/www \
-        -p 8000:8000 \
         stagerightlabs/php-test-runner:8.1 /bin/sh -c "${*:-sh}"
 }
 
@@ -23,7 +22,6 @@ php8.2() {
         -e COMPOSER_HOME=/home/www-data/.config/composer \
         -v $(pwd):/var/www \
         -w /var/www \
-        -p 8000:8000 \
         stagerightlabs/php-test-runner:8.2 /bin/sh -c "${*:-sh}"
 }
 
@@ -33,7 +31,6 @@ php8.3() {
         -e COMPOSER_HOME=/home/www-data/.config/composer \
         -v $(pwd):/var/www \
         -w /var/www \
-        -p 8000:8000 \
         stagerightlabs/php-test-runner:8.3 /bin/sh -c "${*:-sh}"
 }
 
@@ -43,7 +40,6 @@ php8.4() {
         -e COMPOSER_HOME=/home/www-data/.config/composer \
         -v $(pwd):/var/www \
         -w /var/www \
-        -p 8000:8000 \
         stagerightlabs/php-test-runner:8.4 /bin/sh -c "${*:-sh}"
 }
 
