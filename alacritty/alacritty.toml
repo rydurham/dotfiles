@@ -41,13 +41,13 @@ TERM = "alacritty"
 size = 17.0
 
 [font.bold]
-family = "Dank Mono"
+family = "CommitMono"
 
 [font.italic]
-family = "Dank Mono"
+family = "CommitMono"
 
 [font.normal]
-family = "Dank Mono"
+family = "CommitMono"
 
 [font.offset]
 x = 0
