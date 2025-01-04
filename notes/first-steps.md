@@ -1,0 +1,24 @@
+- Install Ubuntu
+- Apt Update
+- SyncThing
+- Adjust display settings
+- Avatar
+- Install aliases
+- Install Neovim and Git
+- Install Terminal Font
+- Keyboard shortcuts: Files / Window movements
+- Install Terminal and Tmux
+- Tmux Keyboard Shortcut
+- 1Password
+- Firefox PPA
+- Sync Firefox Account / Manage Containers
+- Install Docker
+- Install VSCode
+- Sync VSCode Settings (via GitHub)
+- Git GPG Key
+- Install SublimeText
+- Install Todoist
+- Install Slack
+- Install FileZilla
+- OpenVPN & Config file
+- TinkerWell?
