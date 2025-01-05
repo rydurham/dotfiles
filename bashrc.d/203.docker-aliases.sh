@@ -134,3 +134,11 @@ if [ -d "/home/ryan/Workbench/swu" ] ; then
     }
     alias swu=swuops
 fi
+
+if [ -d "/home/ryan/Workbench/relay" ] ; then
+    relay() {
+        cd /home/ryan/Workbench/relay
+        ./ops.sh ${*:-ps}
+        cd $OLDPWD
+    }
+fi
