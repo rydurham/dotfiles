@@ -4,7 +4,7 @@
 wd=$( pwd )
 
 # Add the release PGP keys:
-sudo curl -o /usr/share/keyrings/syncthing-archive-keyring.gpg https://syncthing.net/release-key.gpg
+wget -O /usr/share/keyrings/syncthing-archive-keyring.gpg https://syncthing.net/release-key.gpg
 
 # Add the "stable" channel to your APT sources:
 echo "deb [signed-by=/usr/share/keyrings/syncthing-archive-keyring.gpg] https://apt.syncthing.net/ syncthing stable" | sudo tee /etc/apt/sources.list.d/syncthing.list
@@ -19,6 +19,6 @@ then
     mkdir -p ~/.config/systemd/user
 fi
 
-cp $wd/conf/syncthing.service ~/.config/systemd/user
+cp $wd/syncthing/syncthing.service ~/.config/systemd/user
 systemctl --user enable syncthing.service
 systemctl --user start syncthing.service
