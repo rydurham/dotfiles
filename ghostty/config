@@ -8,5 +8,8 @@ window-padding-y = 5
 window-theme = system
 theme = dark:NightOwlDark,light:NightOwlLight
 confirm-close-surface = false
+cursor-style = bar
+shell-integration-features = no-cursor
+cursor-style-blink = true
 
 command = tmux new-session -As ryan
