@@ -22,6 +22,11 @@ echo "Created symbolic link to alacritty config"
 rm -rf $HOME/.config/alacritty
 ln -s $DOTFILES/alacritty $HOME/.config/alacritty
 
+# Ghostty config
+echo "Created symbolic link to ghostty config"
+rm -rf $HOME/.config/ghostty
+ln -s $DOTFILES/ghostty $HOME/.config/ghostty
+
 # Tmux
 echo "Created symbolic link to tmux config"
 rm -rf $HOME/.tmux.conf

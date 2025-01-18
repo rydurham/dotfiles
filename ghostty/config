@@ -1,0 +1,12 @@
+# Ghostty Config
+
+font-family = CommitMono
+font-size = 16
+adjust-cell-height = 25%
+window-padding-x = 5
+window-padding-y = 5
+window-theme = system
+theme = dark:NightOwlDark,light:NightOwlLight
+confirm-close-surface = false
+
+command = tmux new-session -As ryan
