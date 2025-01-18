@@ -1,12 +1,7 @@
 #/bin/bash
 
-# https://community.openvpn.net/openvpn/wiki/OpenVPN3Linux
-sudo apt install apt-transport-https curl
-sudo wget https://swupdate.openvpn.net/repos/openvpn-repo-pkg-key.pub
-sudo apt-key add openvpn-repo-pkg-key.pub
-rm openvpn-repo-pkg-key.pub
-sudo wget -O /etc/apt/sources.list.d/openvpn3.list https://swupdate.openvpn.net/community/openvpn3/repos/openvpn3-jammy.list
-
+# https://launchpad.net/~djpig/+archive/ubuntu/openvpn
+sudo add-apt-repository ppa:djpig/openvpn
 sudo apt update
 sudo apt install openvpn3
 
