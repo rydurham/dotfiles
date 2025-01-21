@@ -142,3 +142,11 @@ if [ -d "/home/ryan/Workbench/relay" ] ; then
         cd $OLDPWD
     }
 fi
+
+if [ -d "/home/ryan/Workbench/imintothisplace" ] ; then
+    abc() {
+        cd /home/ryan/Workbench/imintothisplace
+        ./ops.sh ${*:-ps}
+        cd $OLDPWD
+    }
+fi
