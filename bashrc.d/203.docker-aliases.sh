@@ -146,7 +146,7 @@ fi
 if [ -d "/home/ryan/Workbench/imintothisplace" ] ; then
     abc() {
         cd /home/ryan/Workbench/imintothisplace
-        ./ops.sh ${*:-ps}
+        vendor/bin/sail ${*:-ps}
         cd $OLDPWD
     }
 fi
