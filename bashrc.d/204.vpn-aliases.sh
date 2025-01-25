@@ -2,7 +2,12 @@
 gatsby() {
     if [ "$1" == "config" ]
     then
-        openvpn3 config-import --config ~/.config/openvpn/ryan.durham.fbg.sopr6i.ovpn --name gatsby
+        existing=$(openvpn3 configs-list)
+        if [[ $existing == *"gatsby"* ]]; then
+            echo "It's there!"
+        else
+            openvpn3 config-import --config ~/.config/openvpn/ryan.durham.fbg.sopr6i.ovpn --name gatsby
+        fi
     fi
     if [ "$1" == "start" ]
     then
