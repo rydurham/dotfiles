@@ -14,5 +14,6 @@ shell-integration-features = no-cursor
 cursor-style-blink = true
 window-height = 30
 window-width = 96
+copy-on-select= true
 
 command = tmux new-session -As ryan
