@@ -1,7 +1,7 @@
 # Ghostty Config
 # https://ghostty.org/docs/config/reference
 
-font-family = CommitMono
+font-family = "CommitMono Nerd Font"
 font-size = 16
 adjust-cell-height = 25%
 window-padding-x = 5
