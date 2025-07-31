@@ -1,8 +1,16 @@
-theme = "base16_default"
-
 [editor]
-line-number = "absolute"
+undercurl = true
+color-modes = true
 
+[editor.statusline]
+right = [
+    "diagnostics",
+    "version-control",
+    "position",
+    "total-line-numbers"
+]
+
+# Lazygit integration
 [keys.normal]
 C-g = [
     ":write-all",
@@ -12,3 +20,14 @@ C-g = [
     ":redraw",
     ":reload-all"
 ]
+
+# [editor.cursor-shape]
+# insert = "bar"
+# normal = "block"
+# select = "underline"
+
+[editor.indent-guides]
+render = true
+
+# Make sure to build and fetch language grammars:
+# https://github.com/helix-editor/helix/issues/11511#issuecomment-2294836330

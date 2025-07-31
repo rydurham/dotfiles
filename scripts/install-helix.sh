@@ -20,7 +20,11 @@ if [ -z "$EXTRACTED_DIR" ]; then
     exit 1
 fi
 
+# Save the binary
 sudo mv "$EXTRACTED_DIR/hx" /usr/local/bin/hx
+
+# Save the runtime directory contents
+sudo cp -r "$EXTRACTED_DIR/runtime/" /home/ryan/Workbench/dotfiles/helix/
 
 # Clean up
 rm -rf $FILENAME "$EXTRACTED_DIR"
