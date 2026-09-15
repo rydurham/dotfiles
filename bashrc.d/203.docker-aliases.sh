@@ -76,6 +76,15 @@ if [ -d "/home/ryan/Workbench/firebrand/eoa" ] ; then
     alias eoa=eoa_ops
 fi
 
+if [ -d "/home/ryan/Workbench/firebrand/eoa-vermeer" ] ; then
+    eoa_vermeer() {
+        cd /home/ryan/Workbench/firebrand/eoa-vermeer
+        ./ops.sh ${*:-ps}
+        cd $OLDPWD
+    }
+    alias ver=eoa_vermeer
+fi
+
 if [ -d "/home/ryan/Workbench/phylos/ops/phylosbio.test" ] ; then
     phylops() {
         cd /home/ryan/Workbench/phylos/ops/phylosbio.test
@@ -113,6 +122,14 @@ fi
 if [ -d "/home/ryan/Workbench/imintothisplace" ] ; then
     abc() {
         cd /home/ryan/Workbench/imintothisplace
+        vendor/bin/sail ${*:-ps}
+        cd $OLDPWD
+    }
+fi
+
+if [ -d "/home/ryan/Workbench/penelope" ] ; then
+    penny() {
+        cd /home/ryan/Workbench/penelope
         vendor/bin/sail ${*:-ps}
         cd $OLDPWD
     }
