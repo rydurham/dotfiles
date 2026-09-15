@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Keymapp
+Exec=/home/ryan/Applications/keymapp/keymapp
+Icon=/home/ryan/Applications/keymapp/icon.png
+Terminal=false
+Type=Application
+Categories=Utility;Application;

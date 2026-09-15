@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=Logseq
+Exec=/home/ryan/Applications/Logseq.AppImage --no-sandbox
+Icon=/home/ryan/Applications/logseq.png
+Terminal=false
+Type=Application
