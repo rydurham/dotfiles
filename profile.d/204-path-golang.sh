@@ -6,3 +6,4 @@ fi
 if [ -d "/home/ryan/go/bin" ] ; then
     PATH="/home/ryan/go/bin:$PATH"
 fi
+

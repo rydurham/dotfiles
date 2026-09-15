@@ -2,6 +2,10 @@
 
 PATH="/bin"
 
+if [ -d "$HOME/.local/bin" ] ; then
+    PATH="$HOME/.local/bin:$PATH"
+fi
+
 if [ -d "/sbin" ] ; then
     PATH="/sbin:$PATH"
 fi
