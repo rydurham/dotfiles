@@ -31,3 +31,7 @@ render = true
 
 # Make sure to build and fetch language grammars:
 # https://github.com/helix-editor/helix/issues/11511#issuecomment-2294836330
+
+# Enable soft word wrap for long lines
+[editor.soft-wrap]
+enable = true
