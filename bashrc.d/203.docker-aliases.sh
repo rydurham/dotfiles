@@ -94,26 +94,9 @@ if [ -d "/home/ryan/Workbench/phylos/ops/phylosbio.test" ] ; then
     alias ph=phylops
 fi
 
-if [ -d "/home/ryan/Workbench/swu" ] ; then
-    swuops() {
-        cd /home/ryan/Workbench/swu
-        ./ops.sh ${*:-ps}
-        cd $OLDPWD
-    }
-    alias swu=swuops
-fi
-
 if [ -d "/home/ryan/Workbench/relay" ] ; then
     relay() {
         cd /home/ryan/Workbench/relay
-        ./ops.sh ${*:-ps}
-        cd $OLDPWD
-    }
-fi
-
-if [ -d "/home/ryan/Workbench/relay" ] ; then
-    onix() {
-        cd /home/ryan/Workbench/hooked-on-onix
         ./ops.sh ${*:-ps}
         cd $OLDPWD
     }
@@ -138,6 +121,14 @@ fi
 if [ -d "/home/ryan/Workbench/stardust" ] ; then
     sd() {
         cd /home/ryan/Workbench/stardust
+        ./ops.sh ${*:-ps}
+        cd $OLDPWD
+    }
+fi
+
+if [ -d "/home/ryan/Workbench/ryandurham.com" ] ; then
+    rcd() {
+        cd /home/ryan/Workbench/ryandurham.com
         ./ops.sh ${*:-ps}
         cd $OLDPWD
     }
