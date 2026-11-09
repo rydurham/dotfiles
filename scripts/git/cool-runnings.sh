@@ -65,7 +65,7 @@ failed=0
 
 # call <description> <method> <endpoint> [json body]
 call() {
-    local desc="$1" method="$2" endpoint="repos/$repo/$3" body="${4:-}"
+    local desc="$1" method="$2" endpoint="repos/$repo${3:+/$3}" body="${4:-}"
 
     if [[ $dry_run -eq 1 ]]; then
         echo "$desc: $method $endpoint"

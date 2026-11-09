@@ -10,6 +10,8 @@
 # name different ones. The rules are hard-coded, modeled on
 # the ruleset in FirebrandTech/fps. Needs gh and jq.
 #
+# Refuses to run in a private repository unless --private is given.
+#
 # Safe to re-run: an existing ruleset with the same name is updated in place.
 #
 # Running order for a new project:
@@ -19,9 +21,11 @@
 #   3. cool-runnings.sh
 #   4. see-you-space-cowboy.sh   (last: it blocks direct pushes to main)
 #
-# Usage: see-you-space-cowboy.sh [--no-ci | -c "check name"...] [-n]
+# Usage: see-you-space-cowboy.sh [--no-ci | -c "check name"...] [--private] [-n]
 #   --no-ci        Do not require any status checks (repos without CI).
 #   -c, --check    Required status check (repeatable). Replaces the defaults.
+#   --private      Apply the ruleset even if the repo is private. GitHub may
+#                  reject it if the plan does not support private rulesets.
 #   -n, --dry-run  Print the ruleset payload and exit.
 
 set -euo pipefail
@@ -30,6 +34,7 @@ NAME="See You, Space Cowboy"
 DEFAULT_CHECKS=("check-title")
 checks=()
 ci=1
+private_ok=0
 dry_run=0
 
 while [[ $# -gt 0 ]]; do
@@ -42,6 +47,10 @@ while [[ $# -gt 0 ]]; do
             [[ $# -ge 2 ]] || { echo "$1 requires a value" >&2; exit 1; }
             checks+=("$2")
             shift 2
+            ;;
+        --private)
+            private_ok=1
+            shift
             ;;
         -n|--dry-run)
             dry_run=1
@@ -113,11 +122,18 @@ if [[ $dry_run -eq 1 ]]; then
 fi
 
 gh auth status >/dev/null 2>&1 || { echo "Run 'gh auth login' first" >&2; exit 1; }
-repo=$(gh repo view --json nameWithOwner --jq .nameWithOwner 2>/dev/null) || {
+info=$(gh repo view --json nameWithOwner,isPrivate 2>/dev/null) || {
     echo "No GitHub repository found for this directory." >&2
     echo "Create it and push first: gh repo create <name> --source . --push" >&2
     exit 1
 }
+repo=$(jq -r .nameWithOwner <<< "$info")
+
+if [[ $private_ok -eq 0 && "$(jq -r .isPrivate <<< "$info")" == "true" ]]; then
+    echo "$repo is a private repository; refusing to apply the ruleset." >&2
+    echo "Pass --private to attempt it anyway." >&2
+    exit 1
+fi
 
 id=$(gh api "repos/$repo/rulesets" --jq ".[] | select(.name == \"$NAME\") | .id" | head -n1)
 
