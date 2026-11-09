@@ -11,6 +11,9 @@ export NVM_DIR="$HOME/.nvm"
 # pnpm
 if [ -d "$HOME/.local/share/pnpm" ] ; then
     export PNPM_HOME="$HOME/.local/share/pnpm"
-    PATH="$PNPM_HOME:$PATH"
+    case ":$PATH:" in
+      ":$PNPM_HOME/bin:"*) ;;
+      *) export PATH="$PNPM_HOME/bin:$PATH" ;;
+    esac
 fi
 # pnpm end
