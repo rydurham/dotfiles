@@ -4,12 +4,12 @@
 #
 # Prepares the current repo so commits and PR titles follow the format
 # type(scope): subject, with the scope required. It adds:
-#   - a GitHub workflow (check-title) that validates PR titles
+#   - a GitHub workflow (check-title) that validates PR titles (skip with --no-ci)
 #   - a commit-msg hook (.githooks, or .husky if the repo uses husky)
 #   - a commit message template (.gitmessage)
 #   - a "Commit Messages" section in the README
 # Pair it with see-you-space-cowboy.sh -c check-title to make the PR title
-# check required.
+# check required (or use --no-ci there if you skipped the workflow here).
 #
 # Safe to re-run: files are only written when their content differs.
 # Nothing is committed.
@@ -21,7 +21,8 @@
 #   3. cool-runnings.sh
 #   4. see-you-space-cowboy.sh   (last: it blocks direct pushes to main)
 #
-# Usage: feel-the-rhythm.sh [-n]
+# Usage: feel-the-rhythm.sh [--no-ci] [-n]
+#   --no-ci        Do not create the GitHub workflow (repos without CI).
 #   -n, --dry-run  Report what would change without touching anything.
 
 set -euo pipefail
@@ -31,9 +32,14 @@ TYPE_LIST="${TYPES//|/ }"
 REGEX="^($TYPES)\\([a-zA-Z0-9._/-]+\\)!?: .+"
 
 dry_run=0
+ci=1
 
 while [[ $# -gt 0 ]]; do
     case "$1" in
+        --no-ci)
+            ci=0
+            shift
+            ;;
         -n|--dry-run)
             dry_run=1
             shift
@@ -182,7 +188,11 @@ EOF
 echo "Repository: $root"
 
 echo "PR title check"
-write_file ".github/workflows/pr-title.yml" "$(render "$WORKFLOW")"
+if [[ $ci -eq 1 ]]; then
+    write_file ".github/workflows/pr-title.yml" "$(render "$WORKFLOW")"
+else
+    echo "  skipped       --no-ci"
+fi
 
 echo "Commit-msg hook"
 if [[ -d .husky ]]; then
@@ -216,5 +226,10 @@ else
 fi
 
 echo
-echo "Nothing was committed. To make the PR title check required, run:"
-echo "  see-you-space-cowboy.sh -c check-title"
+if [[ $ci -eq 1 ]]; then
+    echo "Nothing was committed. To make the PR title check required, run:"
+    echo "  see-you-space-cowboy.sh -c check-title"
+else
+    echo "Nothing was committed. No PR title check was created; use:"
+    echo "  see-you-space-cowboy.sh --no-ci"
+fi
