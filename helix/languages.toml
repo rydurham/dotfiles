@@ -52,5 +52,5 @@ language-servers = ["vuels", "typescript-language-server", "emmet-lsp", "scls"] 
 
 [[language-server.typescript-language-server.config.plugins]]
 name = "@vue/typescript-plugin"
-location = "/home/ryan/.nvm/versions/node/v22.13.1/lib/node_modules/@vue/typescript-plugin"
+location = "/home/ryan/.nvm/versions/node/v24.22.2/lib/node_modules/@vue/typescript-plugin"
 languages = ["vue"]

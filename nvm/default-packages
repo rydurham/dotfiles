@@ -1,0 +1,12 @@
+@vue/language-server
+@vue/typescript-plugin
+dvbx
+emmet-ls
+http-server
+intelephense
+pnpm
+prettier
+typescript
+typescript-language-server
+vscode-langservers-extracted
+wrangler
